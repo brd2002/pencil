@@ -18,8 +18,8 @@ function SideNav() {
       if (activeTeam?._id && user?.email) {
          createFile({
         fileName: fileName,
-        teamId : activeTeam?._id,
-        createdBy: user?.email,
+        teamId : activeTeam?._id|| '',
+        createdBy: user?.email|| '',
         archive:false , 
         document:'',
         whiteboard : ''
