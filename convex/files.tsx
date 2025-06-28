@@ -18,7 +18,7 @@ export const getFile = query({
 export const createFile = mutation({
   args: {
     fileName: v.string(),
-    teamId: v.string(),
+    teamId: v.optional( v.string()),
     createdBy: v.string(),
     archive: v.boolean(),
     document: v.string(),
