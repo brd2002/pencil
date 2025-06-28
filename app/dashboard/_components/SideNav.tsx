@@ -15,7 +15,8 @@ function SideNav() {
     const convex = useConvex();
     const {fileList_ , setFileList_} = useContext(FileListContext)
     const onCreateFile= (fileName: string) =>{
-      createFile({
+      if (activeTeam?._id && user?.email) {
+         createFile({
         fileName: fileName,
         teamId : activeTeam?._id,
         createdBy: user?.email,
@@ -32,6 +33,7 @@ function SideNav() {
           toast('Something went wrong!')
         }
       })
+      }
     }
     useEffect(() => {
       activeTeam&&getFileCount()
